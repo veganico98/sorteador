@@ -27,8 +27,8 @@
 
     <section class="w-full lg:max-w-5/12 bg-orange-100/90 flex items-center justify-center rounded-3xl p-1 shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
         <div class="w-full h-full bg-orange-100/90 flex flex-col items-center px-18 py-8 rounded-3xl border-2 border-dashed border-gray-800">
-                <div class="w-full flex flex-col gap-4">
-                    <div class="flex flex-col">
+                <div class=" flex flex-col gap-2">
+                    <div class="">
                         <label class="text-violet-950 font-bold grotesk" for="person">PARTICIPANTES</label>
                         <input class="bg-gray-100 p-2 rounded-lg" name="person" type="text" placeholder="Digite o participante" data-person="input">
                     </div>
@@ -43,13 +43,13 @@
     </section>
 
     <section class="w-full lg:max-w-5/12 grid grid-cols-2 col-end-2 gap-10">
-        <div class="bg-violet-900/30 flex flex-col sm:grid sm:grid-cols-[3fr_1fr] text-white font-bold gap-5 justify-center items-center px-5 py-5 border border-amber-400/20 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
-            <label for="checkDbl">Gostaria que o mesmo participante possa ser sorteado mais vezes?</label>
+        <div class="bg-violet-900/30 flex flex-col sm:grid sm:grid-cols-[3fr_1fr] text-white text-sm md:text-2xl font-bold gap-5 justify-center items-center px-5 py-5 border border-amber-400/20 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
+            <label for="checkDbl" class="">Gostaria que o mesmo participante possa ser sorteado mais vezes?</label>
             <input class="size-10 border-2 border-amber-100/90 accent-orange-200/90" type="checkbox" id="checkDbl" data-checkDbl="checkbox">
         </div>
-        <div class="bg-violet-900/30 gap-5 justify-center items-center px-5 py-5 border border-amber-400/20 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
+        <div class="bg-violet-900/30 gap-5 flex justify-center items-center p-5 border border-amber-400/20 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
             <div class="flex flex-col sm:flex-row items-center justify-center gap-5" class="">
-                <label class="text-white text-2xl grotesk" for="qtd">Quantidade de sorteios</label>
+                <label class="text-white text-md md:text-2xl grotesk" for="qtd">Quantidade de sorteios</label>
                 <select class="bg-orange-100/90 text-violet-950 w-15 p-2 cursor-pointer disabled:bg-orange-200/90 disabled:cursor-auto border border-amber-400/20 bungee " name="qtd" id="qtd" data-choice="option">
                     <option value=""></option>
                     <option value="1">1</option>

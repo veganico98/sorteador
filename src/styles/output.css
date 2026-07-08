@@ -203,12 +203,6 @@
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
   }
-  .mb-6 {
-    margin-bottom: calc(var(--spacing) * 6);
-  }
-  .mb-10 {
-    margin-bottom: calc(var(--spacing) * 10);
-  }
   .flex {
     display: flex;
   }
@@ -223,9 +217,6 @@
   }
   .size-10 {
     width: calc(var(--spacing) * 10);
-    height: calc(var(--spacing) * 10);
-  }
-  .h-10 {
     height: calc(var(--spacing) * 10);
   }
   .h-full {
@@ -261,12 +252,6 @@
   .grid-cols-\[1fr_2fr_1fr\] {
     grid-template-columns: 1fr 2fr 1fr;
   }
-  .grid-cols-\[2fr_2fr_1fr\] {
-    grid-template-columns: 2fr 2fr 1fr;
-  }
-  .grid-cols-\[3fr_1fr\] {
-    grid-template-columns: 3fr 1fr;
-  }
   .flex-col {
     flex-direction: column;
   }
@@ -278,6 +263,9 @@
   }
   .justify-center {
     justify-content: center;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
   }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
@@ -422,6 +410,9 @@
   .p-3 {
     padding: calc(var(--spacing) * 3);
   }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
   }
@@ -478,12 +469,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-amber-400) 90%, transparent);
     }
-  }
-  .text-amber-800 {
-    color: var(--color-amber-800);
-  }
-  .text-violet-800 {
-    color: var(--color-violet-800);
   }
   .text-violet-950 {
     color: var(--color-violet-950);
@@ -579,11 +564,6 @@
       background-color: var(--color-violet-950);
     }
   }
-  .sm\:flex {
-    @media (width >= 40rem) {
-      display: flex;
-    }
-  }
   .sm\:grid {
     @media (width >= 40rem) {
       display: grid;
@@ -594,34 +574,25 @@
       grid-template-columns: 3fr 1fr;
     }
   }
-  .sm\:flex-col {
-    @media (width >= 40rem) {
-      flex-direction: column;
-    }
-  }
   .sm\:flex-row {
     @media (width >= 40rem) {
       flex-direction: row;
     }
   }
-  .md\:flex {
-    @media (width >= 48rem) {
-      display: flex;
+  .sm\:items-center {
+    @media (width >= 40rem) {
+      align-items: center;
     }
   }
-  .md\:flex-row {
+  .md\:text-2xl {
     @media (width >= 48rem) {
-      flex-direction: row;
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
     }
   }
   .lg\:max-w-5\/12 {
     @media (width >= 64rem) {
       max-width: calc(5 / 12 * 100%);
-    }
-  }
-  .lg\:flex-col {
-    @media (width >= 64rem) {
-      flex-direction: column;
     }
   }
 }
