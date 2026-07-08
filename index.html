@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/output.css">
+    <link rel="stylesheet" href="./src/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Space+Grotesk:wght@400;500;700&family=Bungee&display=swap" rel="stylesheet">
+    <title>Sorteador</title>
+</head>
+<body class="min-h-screen bg-violet-950 bg-[radial-gradient(40%_20%_at_50%_0%,theme(colors.violet.700)_0%,theme(colors.violet.950)_100%)] bg-no-repeat bg-top bg-[length:100%_500px] flex flex-col items-center gap-10 pt-13 px-8">
+    <section class="flex flex-col gap-4 justify-center items-center">
+        <div class="text-white flex flex-col justify-center items-center gap-3">
+            <div class="">
+                <h1 class="fraunces text-6xl text-white font-serif text-shadow-[0_5px_10px_rgba(0,0,0,0.6)]">Sorteador</h1>
+            </div>
+            <div class="grid grid-cols-[1fr_2fr_1fr] text-center">
+                <p class="col-start-2 grotesk">Adicione os participantes, escolha quantos bilhetes serão sorteados e veja quem leva o prêmio.</p>
+            </div>
+            <div>
+                <div class="w-50 border-t-2 border-dashed border-t-amber-400"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full lg:max-w-5/12 bg-orange-100/90 flex items-center justify-center rounded-3xl p-1 shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
+        <div class="w-full h-full bg-orange-100/90 flex flex-col items-center px-18 py-8 rounded-3xl border-2 border-dashed border-gray-800">
+                <div class="w-full flex flex-col gap-4">
+                    <div class="flex flex-col">
+                        <label class="text-violet-950 font-bold grotesk" for="person">PARTICIPANTES</label>
+                        <input class="bg-gray-100 p-2 rounded-lg" name="person" type="text" placeholder="Digite o participante" data-person="input">
+                    </div>
+                    <div class="*:text-violet-950 *:font-bold *:grotesk">
+                        <span data-warningDbl="span" class="hidden">* Participante já incluso</span>
+                        <span data-warningNth="span" class="hidden">* Envie um nome válido</span>
+                    </div>
+                    <button class="text-violet-950 font-bold rounded-lg bg-amber-400/70 p-2 border-2 border-amber-700/40 cursor-pointer hover:bg-amber-400/50 duration-500" type="submit" data-person="button">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full lg:max-w-5/12 grid grid-cols-2 col-end-2 gap-10">
+        <div class="bg-violet-900/30 flex flex-col sm:grid sm:grid-cols-[3fr_1fr] text-white font-bold gap-5 justify-center items-center px-5 py-5 border border-amber-400/20 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
+            <label for="checkDbl">Gostaria que o mesmo participante possa ser sorteado mais vezes?</label>
+            <input class="size-10 border-2 border-amber-100/90 accent-orange-200/90" type="checkbox" id="checkDbl" data-checkDbl="checkbox">
+        </div>
+        <div class="bg-violet-900/30 gap-5 justify-center items-center px-5 py-5 border border-amber-400/20 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5" class="">
+                <label class="text-white text-2xl grotesk" for="qtd">Quantidade de sorteios</label>
+                <select class="bg-orange-100/90 text-violet-950 w-15 p-2 cursor-pointer disabled:bg-orange-200/90 disabled:cursor-auto border border-amber-400/20 bungee " name="qtd" id="qtd" data-choice="option">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="w-full lg:max-w-5/12 text-white font-bold mb-1">
+        <div class="grid grid-cols-2 place-items-center items-center mb-5">
+            <h1 class="fraunces text-3xl text-shadow-[0_5px_10px_rgba(0,0,0,0.6)]">Lista de participantes</h1>
+            <div class="w-full border-t-2 border-t-amber-400/20"></div>
+        </div>
+        
+        <ul class="hidden w-full bg-violet-900/80 border-1 border-amber-400/20 grid grid-cols-4 place-items-center justify-center items-center rounded-3xl 
+        shadow-[0_15px_30px_rgba(0,0,0,0.4)] p-3 mb-2" id="personList" data-personList="list"></ul> 
+        <div class="grid grid-cols-[1fr_2fr_1fr] text-center text-xs">
+            <span class="hidden col-start-2" data-warningAdapt="span">* A quantidade de sorteios foi ajustada para o número de participantes, pois a repetição de pessoas está desativada.</span>
+        </div>
+    </section>
+
+    <section class="w-full lg:max-w-5/12">
+        <ul data-newModal="list" class="grid grid-cols-2 gap-4"></ul>
+    </section>
+</body>
+    <script type="module" src="./src/js/script.js"></script>
+</html>
