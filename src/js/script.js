@@ -1,7 +1,9 @@
-import initChangeNumber from "./modules/changeNum.js";
-import initChangePerson from "./modules/changePerson.js";
-// import initCreateButton from "./modules/createButton.js";
+import initButton from "./modules/buttons.js";
+import initPeople from "./modules/people.js";
+import initUi from "./modules/ui.js";
+import initDraw from "./modules/draw.js";
 
-initChangeNumber();
-initChangePerson();
-// initCreateButton();
+initButton();
+initPeople();
+initDraw();
+initUi();
