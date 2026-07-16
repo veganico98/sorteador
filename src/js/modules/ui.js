@@ -14,7 +14,7 @@ const numPlays = document.querySelector('[data-choice="option"]');
 const doubleCheckbox = document.querySelector('[data-checkDbl="checkbox"]');
 const ulDrawButtons = document.querySelector('[data-drawButtons="list"]');
 const warningAmount = document.querySelector('[data-warningAdapt="span"]');
-
+const arrayListPlayers = [];
 
 export function showWarningEmpty(name){
     if(!name){
@@ -61,8 +61,19 @@ export function renderPerson(name){
     removeHidden(listPlayers);
     const list = document.createElement("li");
     list.textContent = name;
+    arrayListPlayers.push(list);
     listPlayers.appendChild(list);
+    return arrayListPlayers;
 }
+
+export function getListPlayers(){
+    return arrayListPlayers;
+}
+
+export function removeListPlayers(index) {
+    return arrayListPlayers.splice(index, 1)[0];
+}
+
 
 export function ulDraw(){
     return ulDrawButtons;
@@ -73,8 +84,15 @@ export function buttonUi(button){
     return button
 }
 
-function highlightPerson(){
+export function highlightPerson(player){
+    const arrayPlayers = getListPlayers();
 
+    for(const li of arrayPlayers){
+        if(li.textContent === player){
+            li.classList.add("text-amber-400/90");
+            break;
+        }
+    }
 }
 
 function renderButtons(){
